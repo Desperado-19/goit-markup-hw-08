@@ -16,6 +16,7 @@
   --footer-hero-bg-color: #2F303A;
   --section-team-bg-color: #F5F4FA;
   --section-team-item-bg-color: #FFFFFF;
+  --gradient: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4));
   /* font-family */
   --primary-font: "Roboto", sans-serif;
   --secondary-font: "Raleway", sans-serif;
@@ -50,12 +51,6 @@ body {
   padding-top: 60px;
   padding-bottom: 60px;
 }
-@media screen and (min-width: 768px) {
-  .section {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
-}
 @media screen and (min-width: 1200px) {
   .section {
     padding-top: 94px;
@@ -70,13 +65,6 @@ body {
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
   margin-bottom: 30px;
-}
-@media screen and (min-width: 768px) {
-  .section-title {
-    font-size: 28px;
-    line-height: 1.17;
-    margin-bottom: 30px;
-  }
 }
 @media screen and (min-width: 1200px) {
   .section-title {
@@ -237,25 +225,24 @@ img {
 }
 
 .hero {
-  padding-top: 118px;
-  padding-bottom: 118px;
-  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero_image.jpg);
+  padding: 118px 0;
+  background-image: var(), url(../images/hero_image.jpg);
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: center;
   background-size: cover;
+  text-align: center;
   width: 100%;
   margin: 0 auto;
+  text-align: center;
 }
 @media screen and (min-width: 768px) {
   .hero {
-    padding-top: 118px;
-    padding-bottom: 118px;
+    padding: 118px 204px;
   }
 }
 @media screen and (min-width: 1200px) {
   .hero {
-    padding-top: 200px;
-    padding-bottom: 200px;
+    padding: 200px 0;
     max-width: 1600px;
   }
 }
@@ -275,7 +262,6 @@ img {
 }
 @media screen and (min-width: 768px) {
   .hero__title {
-    width: 360px;
     font-size: 26px;
     line-height: 1.61;
   }
@@ -364,11 +350,6 @@ img {
     text-align: left;
   }
 }
-@media screen and (min-width: 1200px) {
-  .icon-list__title {
-    text-align: left;
-  }
-}
 
 .icon-list__text {
   font-size: 14px;
@@ -445,7 +426,6 @@ img {
 @media screen and (min-width: 768px) {
   .team-item {
     width: calc((100% - 30px) / 2);
-    padding-bottom: 24px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -573,9 +553,29 @@ img {
 
 .portfolio-btn-list {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 34px;
-  justify-content: center;
+  margin-bottom: 40px;
+}
+@media screen and (min-width: 768px) {
+  .portfolio-btn-list {
+    margin-bottom: 14px;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .portfolio-btn-list {
+    margin-bottom: 34px;
+  }
+}
+
+.portfolio-btn-item:nth-child(-n+3) {
+  margin-bottom: 15px;
+}
+@media screen and (min-width: 768px) {
+  .portfolio-btn-item:nth-child(-n+3) {
+    margin-bottom: 0;
+  }
 }
 
 .portfolio-btn {
@@ -603,6 +603,24 @@ img {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
+.portfolio-btn:first-child {
+  padding: 6px 26px;
+}
+@media screen and (min-width: 768px) {
+  .portfolio-btn:first-child {
+    padding: 6px 22px;
+  }
+}
+
+.portfolio-btn:last-child {
+  padding: 6px 26px;
+}
+@media screen and (min-width: 768px) {
+  .portfolio-btn:last-child {
+    padding: 6px 22px;
+  }
+}
+
 .portfolio-list {
   display: flex;
   flex-wrap: wrap;
@@ -610,17 +628,31 @@ img {
 }
 
 .portfolio-item {
-  width: 370px;
+  width: 100%;
   background: #FFFFFF;
+}
+@media screen and (min-width: 768px) {
+  .portfolio-item {
+    width: calc((100% - 30px) / 2);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .portfolio-item {
+    width: calc((100% - 60px) / 3);
+  }
 }
 
 .portfolio-top-wrap {
   position: relative;
   overflow: hidden;
+  flex-grow: 1;
 }
 
 .portfolio-link {
   display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   transition-property: box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -630,14 +662,18 @@ img {
 }
 
 .portfolio-top-text {
+  position: absolute;
+  top: 0;
+  left: 0;
   font-size: 18px;
   line-height: 1.55;
   letter-spacing: 0.03em;
   color: #FFFFFF;
   background-color: rgba(33, 150, 243, 0.9);
-  position: absolute;
-  top: 0;
-  padding: 63px 24px;
+  padding-right: 24px;
+  padding-left: 24px;
+  display: flex;
+  align-items: center;
   height: 100%;
   transform: translateY(100%);
   transition-property: transform;
@@ -646,6 +682,23 @@ img {
 }
 .portfolio-item:hover .portfolio-top-text {
   transform: translateY(0);
+}
+@media screen and (min-width: 480px) {
+  .portfolio-top-text {
+    padding-top: 77px;
+    padding-bottom: 77px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .portfolio-top-text {
+    padding-top: 49px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .portfolio-top-text {
+    padding-top: 63px;
+    padding-bottom: 63px;
+  }
 }
 
 .portfolio-container {
@@ -684,9 +737,6 @@ img {
 }
 @media screen and (min-width: 768px) {
   .footer-wrap {
-    text-align: center;
-    align-items: center;
-    justify-content: center;
     flex-direction: row;
   }
 }
@@ -704,7 +754,6 @@ img {
 }
 @media screen and (min-width: 768px) {
   .footer-container {
-    margin-bottom: 60px;
     margin-right: 165px;
   }
 }
@@ -721,12 +770,6 @@ img {
   line-height: 1.16;
   letter-spacing: 0.03em;
   color: var(--logo-first-part-color);
-}
-@media screen and (min-width: 768px) {
-  .logo-footer {
-    font-size: 24px;
-    line-height: 1.16;
-  }
 }
 @media screen and (min-width: 1200px) {
   .logo-footer {
@@ -792,7 +835,7 @@ img {
 @media screen and (min-width: 1200px) {
   .footer-social-container {
     margin-bottom: 0;
-    margin-right: 93px;
+    margin-right: 94px;
   }
 }
 
@@ -842,12 +885,6 @@ img {
   flex-direction: column;
   gap: 20px;
 }
-@media screen and (min-width: 768px) {
-  .footer-form {
-    flex-direction: column;
-    gap: 20px;
-  }
-}
 @media screen and (min-width: 1200px) {
   .footer-form {
     flex-direction: row;
@@ -867,7 +904,7 @@ img {
 }
 
 .footer-input {
-  width: 450px;
+  width: 100%;
   height: 50px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
@@ -903,7 +940,7 @@ img {
   border-color: var(--hover-focus-color);
   cursor: pointer;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 480px) {
   .footer-input {
     width: 450px;
   }
@@ -957,7 +994,7 @@ img {
 }
 
 .modal {
-  width: 450px;
+  width: 100%;
   min-height: 609px;
   background-color: #FFFFFF;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -974,10 +1011,9 @@ img {
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(1.5);
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 480px) {
   .modal {
     width: 450px;
-    min-height: 609px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -1026,11 +1062,6 @@ img {
   letter-spacing: 0.03em;
   margin-bottom: 12px;
   color: var(--primary-text-color);
-}
-@media screen and (min-width: 768px) {
-  .modal-title {
-    line-height: 1.5;
-  }
 }
 @media screen and (min-width: 1200px) {
   .modal-title {
@@ -1118,20 +1149,6 @@ img {
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
-@media screen and (min-width: 768px) {
-  .modal-textarea::-moz-placeholder {
-    font-size: 14px;
-    line-height: 1.14;
-  }
-  .modal-textarea:-ms-input-placeholder {
-    font-size: 14px;
-    line-height: 1.14;
-  }
-  .modal-textarea::placeholder {
-    font-size: 14px;
-    line-height: 1.14;
-  }
-}
 @media screen and (min-width: 1200px) {
   .modal-textarea::-moz-placeholder {
     font-size: 12px;
@@ -1168,12 +1185,6 @@ img {
   align-items: center;
   justify-content: center;
 }
-@media screen and (min-width: 768px) {
-  .check-text {
-    font-size: 12px;
-    line-height: 1.16;
-  }
-}
 @media screen and (min-width: 1200px) {
   .check-text {
     font-size: 14px;
@@ -1195,12 +1206,6 @@ img {
 }
 .policy-link:hover, .policy-link:focus {
   color: #188CE8;
-}
-@media screen and (min-width: 768px) {
-  .policy-link {
-    font-size: 12px;
-    line-height: 1.16;
-  }
 }
 @media screen and (min-width: 1200px) {
   .policy-link {
