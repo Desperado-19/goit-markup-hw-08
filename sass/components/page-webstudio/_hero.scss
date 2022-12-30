@@ -1,7 +1,7 @@
 .hero {
     padding: 118px 0;
-    background-image: var(), 
-    url(../images/hero_image.jpg);
+    background-image: var(--gradient),
+    url(../images/hero/hero_bg_mob.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -10,12 +10,30 @@
     margin: 0 auto;
     text-align: center;
 
-    @include mobile {
+    @include retina {
+        background-image: var(--gradient),
+        url(../images/hero/hero_bg_mob_2x.jpg);
+    }
 
+    @include mobile {
+        background-image: var(--gradient),
+        url(../images/hero/hero_bg_tab.jpg);
+
+        @include retina {
+            background-image: var(--gradient),
+            url(../images/hero/hero_bg_tab_2x.jpg);
+        }
     }
 
     @include tablet {
         padding: 118px 204px;
+        background-image: var(--gradient),
+        url(../images/hero/hero_bg_desk.jpg);
+
+        @include retina {
+            background-image: var(--gradient),
+            url(../images/hero/hero_bg_desk_2x.jpg);
+        }
     }
 
     @include desktop {
