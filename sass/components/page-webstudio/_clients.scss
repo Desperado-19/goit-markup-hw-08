@@ -1,4 +1,4 @@
-.menu-icon {
+.clients {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -9,7 +9,7 @@
     }
 }
 
-.menu-icon__item {
+.clients__item {
     width: calc((100% - 30px) / 2);
     height: 92px;
 
@@ -22,7 +22,7 @@
     }
 }
 
-.menu-icon__link {
+.clients__link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,17 +41,17 @@
     }
 }
 
-.menu-icon__icon {
+.clients__icon {
     fill: #AFB1B8;
     transition-property: fill;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
-    .menu-icon__link:hover & {
+    .clients__link:hover & {
         fill: var(--hover-focus-color);
     }
     
-    .menu-icon__link:focus & {
+    .clients__link:focus & {
         fill: var(--hover-focus-color);
     }
 }

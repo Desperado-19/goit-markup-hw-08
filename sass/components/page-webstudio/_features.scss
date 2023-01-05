@@ -1,4 +1,4 @@
-.icon-list {
+.features-list {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
@@ -8,7 +8,7 @@
     }
 }
 
-.icon-list__container {
+.features-list__container {
     height: 120px;
     display: flex;
     align-items: center;
@@ -17,7 +17,7 @@
     background-color: #F5F4FA;
 }
 
-.icon-list__item {
+.features-list__item {
     width: 100%;
     
     @include tablet {
@@ -29,7 +29,7 @@
     }
 }
 
-.icon-list__title {
+.features-list__title {
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
@@ -44,7 +44,7 @@
     }
 }
 
-.icon-list__text {
+.features-list__text {
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;

@@ -5,20 +5,20 @@
     }
 }
 
-.picture-list {
+.process-list {
     display: flex;
     gap: 30px;
 }
 
-.picture-list__item {
+.process-list__item {
     width: calc((100% - 60px) / 3);
 }
 
-.picture-list__top-wrap {
+.process-list__top-wrap {
     position: relative;
 }
 
-.picture-list__top-text {
+.process-list__top-text {
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
