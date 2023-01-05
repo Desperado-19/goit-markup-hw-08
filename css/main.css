@@ -511,10 +511,14 @@ img {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--hero-title-color);
-  width: 360px;
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
+}
+@media screen and (min-width: 480px) {
+  .hero__title {
+    width: 360px;
+  }
 }
 @media screen and (min-width: 768px) {
   .hero__title {
@@ -901,11 +905,9 @@ img {
 .portfolio-top-wrap {
   position: relative;
   overflow: hidden;
-  flex-grow: 1;
 }
 
 .portfolio-link {
-  display: block;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -921,7 +923,7 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.55;
   letter-spacing: 0.03em;
   color: #FFFFFF;
@@ -941,6 +943,7 @@ img {
 }
 @media screen and (min-width: 480px) {
   .portfolio-top-text {
+    font-size: 18px;
     padding-top: 77px;
     padding-bottom: 77px;
   }
@@ -958,6 +961,7 @@ img {
 }
 
 .portfolio-container {
+  flex-grow: 1;
   padding: 20px 24px;
   border: 1px solid #EEEEEE;
 }

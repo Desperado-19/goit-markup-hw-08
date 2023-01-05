@@ -20,12 +20,9 @@
 .portfolio-top-wrap {
     position: relative;
     overflow: hidden;
-    flex-grow: 1;
 }
 
 .portfolio-link {
-    display: block;
-
     display: flex; 
     flex-direction: column; 
     height: 100%;
@@ -45,7 +42,7 @@
     top: 0;
     left: 0;
     
-    font-size: 18px;
+    font-size: 14px;
     line-height: 1.55;
     letter-spacing: 0.03em;
     color: #FFFFFF;
@@ -67,6 +64,7 @@
     }
 
     @include mobile {
+        font-size: 18px;
         padding-top: 77px;
         padding-bottom: 77px;
     }
@@ -82,6 +80,7 @@
 }
 
 .portfolio-container {
+    flex-grow: 1;
     padding: 20px 24px;
     border: 1px solid #EEEEEE;
 }
